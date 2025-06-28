@@ -4,7 +4,7 @@ import Problem from '@/components/Problem';
 import PlatformOverview from '@/components/PlatformOverview';
 import VisualFlow from '@/components/VisualFlow';
 import ValueProp from '@/components/ValueProp';
-import InteractiveDemo from '@/components/InteractiveDemo';
+import InteractiveCta from '@/components/InteractiveCta';
 import LeadMagnet from '@/components/LeadMagnet';
 import FinalCTA from '@/components/FinalCTA';
 import PageMeta from '@/components/PageMeta';
@@ -23,7 +23,7 @@ const Index = () => {
       <PlatformOverview />
       <VisualFlow />
       <ValueProp />
-      <InteractiveDemo />
+      <InteractiveCta />
       <LeadMagnet />
       <FinalCTA />
     </div>
