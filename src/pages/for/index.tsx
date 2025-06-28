@@ -1,5 +1,28 @@
 import PageMeta from '@/components/PageMeta';
-import { Link } from 'react-router-dom';
+import FeatureCard from '@/components/FeatureCard';
+
+const forTeamsFeatures = [
+    {
+        title: "For Founders",
+        description: "Find your first 100 customers and build a repeatable sales process.",
+        link: "/for/founders"
+    },
+    {
+        title: "For Sales",
+        description: "Automate your prospecting and outreach, and spend more time selling.",
+        link: "/for/sales"
+    },
+    {
+        title: "For Marketing",
+        description: "Find your ICP, build your target account list, and power your ABM campaigns.",
+        link: "/for/marketing"
+    },
+    {
+        title: "For Recruiting",
+        description: "Find and engage top talent with our database of 200M+ contacts.",
+        link: "/for/recruiting"
+    }
+];
 
 const ForTeams = () => {
     return (
@@ -19,35 +42,15 @@ const ForTeams = () => {
             </section>
 
             <section className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-                <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                    <div className="p-6 bg-gray-50 rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-                        <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><Link to="/for/founders">For Founders</Link></h2>
-                        <p className="mb-3 font-normal text-gray-500 dark:text-gray-400">Find your first 100 customers and build a repeatable sales process.</p>
-                        <Link to="/for/founders" className="inline-flex items-center text-blue-600 hover:underline">
-                            Learn More
-                        </Link>
-                    </div>
-                    <div className="p-6 bg-gray-50 rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-                        <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><Link to="/for/sales">For Sales</Link></h2>
-                        <p className="mb-3 font-normal text-gray-500 dark:text-gray-400">Automate your prospecting and outreach, and spend more time selling.</p>
-                        <Link to="/for/sales" className="inline-flex items-center text-blue-600 hover:underline">
-                            Learn More
-                        </Link>
-                    </div>
-                    <div className="p-6 bg-gray-50 rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-                        <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><Link to="/for/marketing">For Marketing</Link></h2>
-                        <p className="mb-3 font-normal text-gray-500 dark:text-gray-400">Find your ICP, build your target account list, and power your ABM campaigns.</p>
-                        <Link to="/for/marketing" className="inline-flex items-center text-blue-600 hover:underline">
-                            Learn More
-                        </Link>
-                    </div>
-                    <div className="p-6 bg-gray-50 rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-                        <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><Link to="/for/recruiting">For Recruiting</Link></h2>
-                        <p className="mb-3 font-normal text-gray-500 dark:text-gray-400">Find and engage top talent with our database of 200M+ contacts.</p>
-                        <Link to="/for/recruiting" className="inline-flex items-center text-blue-600 hover:underline">
-                            Learn More
-                        </Link>
-                    </div>
+                <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+                    {forTeamsFeatures.map((feature, index) => (
+                        <FeatureCard
+                            key={index}
+                            title={feature.title}
+                            description={feature.description}
+                            link={feature.link}
+                        />
+                    ))}
                 </div>
             </section>
         </div>

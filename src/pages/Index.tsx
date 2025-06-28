@@ -2,8 +2,10 @@ import Hero from '@/components/Hero';
 import SocialProof from '@/components/SocialProof';
 import Problem from '@/components/Problem';
 import PlatformOverview from '@/components/PlatformOverview';
+import VisualFlow from '@/components/VisualFlow';
 import ValueProp from '@/components/ValueProp';
 import InteractiveDemo from '@/components/InteractiveDemo';
+import LeadMagnet from '@/components/LeadMagnet';
 import FinalCTA from '@/components/FinalCTA';
 import PageMeta from '@/components/PageMeta';
 
@@ -19,8 +21,10 @@ const Index = () => {
       <SocialProof />
       <Problem />
       <PlatformOverview />
+      <VisualFlow />
       <ValueProp />
       <InteractiveDemo />
+      <LeadMagnet />
       <FinalCTA />
     </div>
   );
