@@ -1,0 +1,19 @@
+# Allow all user agents to crawl the site
+User-agent: *
+Disallow:
+
+# Allow specific bots full access
+User-agent: Googlebot
+Disallow:
+
+User-agent: Bingbot
+Disallow:
+
+User-agent: DuckDuckBot
+Disallow:
+
+User-agent: GPTBot
+Disallow:
+
+# Sitemap location
+Sitemap: https://www.greendoor.ai/sitemap.xml 
