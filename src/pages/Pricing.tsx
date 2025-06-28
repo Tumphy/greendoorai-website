@@ -1,72 +1,54 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import AutonomousPricingTiers from "@/components/AutonomousPricingTiers";
-import { DollarSign, Users, Zap } from "lucide-react";
+import AutonomousPricingTiers from '@/components/AutonomousPricingTiers';
+import React from 'react';
+import PageMeta from '@/components/PageMeta';
 
-const Pricing = () => {
-  return (
-    <div className="bg-gray-50">
-      <Header />
-      <main className="py-24 sm:py-32">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center">
-                <DollarSign className="w-6 h-6 text-white" />
-              </div>
-              <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-                Revolutionary Pricing
-              </h1>
-            </div>
-            <p className="mt-6 text-xl leading-8 text-gray-600">
-              Deploy an autonomous AI workforce for less than the cost of a single sales rep.
-            </p>
-          </div>
-          
-          <AutonomousPricingTiers />
+const faqs = [
+    {
+        question: "How does billing work?",
+        answer: "Our billing is based on the tier you select. The Individual and Team plans are billed per user, per month. The Agency plan has a base monthly fee that includes a set number of client accounts, with the option to add more. Enterprise plans are custom and billed annually."
+    },
+    {
+        question: "Do you replace Outreach, Apollo, Gong?",
+        answer: "GreendoorAI is designed to be an all-in-one sales platform that can replace many of the functions of these tools. However, we also offer integrations with popular CRMs and sales tools, so you can use GreendoorAI to augment your existing stack if you prefer."
+    },
+    {
+        question: "Do I need sales experience?",
+        answer: "No. GreendoorAI is designed to be intuitive and easy to use, even for those without a background in sales. Our AI-driven coaching and automated workflows guide you through the sales process, making it easy to get started and see results quickly."
+    },
+    {
+        question: "Can I import leads?",
+        answer: "Yes. You can easily import leads from a CSV file or directly from your CRM. GreendoorAI will then enrich this data and use it to power your outbound campaigns."
+    }
+]
 
-          <div className="mt-24 bg-white p-12 rounded-lg shadow-lg border border-gray-200">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
-                <h3 className="text-3xl font-bold text-gray-900">The Autonomous Advantage</h3>
-                <p className="mt-4 text-lg text-gray-600">
-                  Traditional sales teams are expensive and inefficient. GreenDoor AI offers a new paradigm.
-                </p>
-                <div className="mt-8 space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
-                      <Users className="w-6 h-6 text-red-600" />
+const Pricing: React.FC = () => {
+    return (
+        <div>
+            <PageMeta
+                title="Pricing Plans"
+                description="Find the right plan for your sales motion. From individual sellers to enterprise organizations, GreendoorAI has a plan to help you close more deals."
+                path="/pricing"
+            />
+            <AutonomousPricingTiers />
+            <div className="bg-white dark:bg-gray-900 py-16">
+                <div className="container mx-auto px-6">
+                    <div className="text-center">
+                        <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl">
+                            Frequently Asked Questions
+                        </h2>
                     </div>
-                    <div>
-                      <h4 className="font-semibold text-lg">Traditional Sales Team (1 SDR)</h4>
-                      <p className="text-gray-600">Avg. Cost: $8,000 - $12,000 / month</p>
-                      <p className="text-sm text-gray-500">Includes salary, commission, benefits, and overhead.</p>
+                    <div className="mt-12 max-w-3xl mx-auto">
+                        {faqs.map((faq) => (
+                            <div key={faq.question} className="py-6 border-b border-gray-200 dark:border-gray-700">
+                                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{faq.question}</h3>
+                                <p className="mt-2 text-gray-600 dark:text-gray-300">{faq.answer}</p>
+                            </div>
+                        ))}
                     </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-                      <Zap className="w-6 h-6 text-green-600" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-lg">Autonomous AI Sales Agent</h4>
-                      <p className="text-gray-600">Starting at: $3,000 / month</p>
-                      <p className="text-sm text-gray-500">Works 24/7, never sleeps, and continuously improves.</p>
-                    </div>
-                  </div>
                 </div>
-              </div>
-              <div className="text-center">
-                <div className="text-6xl font-bold text-green-600">4x</div>
-                <div className="text-xl font-semibold text-gray-800 mt-2">More Cost-Effective</div>
-                <p className="text-gray-600 mt-2">...with unparalleled speed and scale.</p>
-              </div>
             </div>
-          </div>
         </div>
-      </main>
-      <Footer />
-    </div>
-  );
+    );
 };
 
 export default Pricing;
